@@ -7,6 +7,7 @@
             :type="type"
             :accept="accept"
             :placeholder="placeholder"
+            :disabled="disabled"
             @input="$emit('input', $event.target.value)"
             @change="$emit('change', $event)"
         >
@@ -25,7 +26,8 @@ export default {
         type: {
             type: String,
             default: "text"
-        }
+        },
+        disabled: Boolean
     },
     computed: {
         isFile: function() {
@@ -84,5 +86,4 @@ input {
 input:focus {
     box-shadow: 0px 0px 3px 0px black;
 }
-
 </style>
